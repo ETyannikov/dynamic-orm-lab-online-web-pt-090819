@@ -58,6 +58,7 @@ def self.table_name
     sql = 0
     attribute.each do |key,value| 
       sql = "SELECT * FROM #{self.table_name} WHERE #{key} = #{value}"
+      binding.pry
       end
     DB[:conn].execute(sql)
   end
