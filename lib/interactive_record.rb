@@ -50,7 +50,7 @@ def self.table_name
   end
   
   def find_by_name(name)
-    sql = "SELECT"
+    sql = "SELECT * FROM #{self.table_name} WHERE name = #{name}"
   end
   
   def find_by
