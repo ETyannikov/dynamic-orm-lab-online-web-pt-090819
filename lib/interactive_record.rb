@@ -57,7 +57,7 @@ def self.table_name
   def self.find_by(attribute)
     sql = 0
     attribute.each do |key,value| 
-      value = "'#{value}'" unless value != Integer
+      value = "'#{value}'" unless value == Integer
       sql = "SELECT * FROM #{self.table_name} WHERE #{key} = #{value}"
       binding.pry
       end
